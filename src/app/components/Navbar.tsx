@@ -1,65 +1,70 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Moon, Sun } from "lucide-react"; // for dark/light icons
 import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-const Navbar: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
-  // Apply dark/light mode class to <html>
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
+  const navLinks = [
+    { name: "Home", href: "#" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg border-b border-white/10">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        
         {/* Logo */}
-        <Link href="/skills" className="text-xl font-bold text-gray-900 dark:text-white">
+        <Link href="/" className="text-xl font-bold text-white">
           mosiur.dev
         </Link>
 
-        {/* Navigation Links */}
-        <ul className="flex space-x-6 items-center">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-            <li key={item}>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex gap-8 text-gray-300">
+          {navLinks.map((link) => (
+            <li key={link.name}>
               <a
-                href={`#${item.toLowerCase()}`}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                href={link.href}
+                className="hover:text-white transition"
               >
-                {item}
+                {link.name}
               </a>
             </li>
           ))}
-
-          {/* Hire Me button */}
-          <li>
-            <a
-              href="#contact"
-              className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-            >
-              Hire Me
-            </a>
-          </li>
-
-          {/* Dark/Light toggle */}
-          <li>
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="ml-4 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-          </li>
         </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
       </div>
+
+      {/* Mobile Dropdown */}
+      {open && (
+        <div className="md:hidden bg-black/90 backdrop-blur-lg px-6 pb-4">
+          <ul className="flex flex-col gap-4 text-gray-300">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="block hover:text-white transition"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
-};
-
-export default Navbar;
+}
