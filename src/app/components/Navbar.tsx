@@ -42,15 +42,17 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
         <button
           onClick={() => {
             document.documentElement.classList.toggle("dark");
             setDark(!dark);
           }}
-          className="ml-4 text-sm"
+          className="ml-4 px-3 py-1 border border-white/20 rounded hover:bg-white/10 transition"
         >
-          {dark ? "Light" : "Dark"}
+          {dark ? "🌙 Dark" : "☀️ Light"}
         </button>
+        
 
         {/* Mobile Menu Button */}
         <button
@@ -60,6 +62,7 @@ export default function Navbar() {
           {open ? <X /> : <Menu />}
         </button>
       </div>
+      
 
       {/* Mobile Dropdown */}
       {open && (
@@ -78,8 +81,11 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
         </div>
+        
       )}
+      
     </nav>
   );
 }
