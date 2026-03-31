@@ -5,7 +5,10 @@ import Button from "./Button"; // We'll create a reusable Button later
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-black relative overflow-hidden">
+      
+      <div className="absolute w-[500px] h-[500px] bg-pink-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
+      <div className="absolute w-[500px] h-[500px] bg-blue-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
       {/* Name */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
@@ -38,6 +41,9 @@ export default function Hero() {
           Download Resume
         </Button>
       </motion.div>
+      <p className="mt-2 text-green-400 text-sm">
+  ● Available for opportunities
+</p>
     </section>
   );
 }

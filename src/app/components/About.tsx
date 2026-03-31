@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -8,7 +7,7 @@ export default function About() {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="text-3xl md:text-4xl font-bold mb-6 text-center"
+        className="text-3xl md:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text"
       >
         About Me
       </motion.h2>
@@ -23,6 +22,11 @@ export default function About() {
         real-world problems and creating clean, scalable, and user-friendly
         interfaces.
       </motion.p>
+      <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+></motion.div>
     </section>
   );
 }
