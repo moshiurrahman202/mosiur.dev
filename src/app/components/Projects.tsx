@@ -13,26 +13,44 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
+    <motion.section
+  id="projects"
+  className="py-20 px-6 max-w-6xl mx-auto"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text" >Projects</h2>
-      
-
+      <h3 className="text-xl font-semibold text-pink-400 mb-6">
+  Featured Projects
+</h3>
       <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="p-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
-          >
-            <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="text-gray-400 mt-2">{project.desc}</p>
-          </div>
-        ))}
+  {projects.map((project) => (
+    <div
+      key={project.title}
+      className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition transform hover:-translate-y-2 hover:shadow-xl"
+    >
+      <h3 className="text-xl font-semibold">{project.title}</h3>
+      <p className="text-gray-400 mt-2">{project.desc}</p>
+
+      {/* Tech Stack */}
+      <div className="flex gap-2 mt-3 flex-wrap">
+        <span className="text-xs px-2 py-1 bg-white/10 rounded">
+          React
+        </span>
+        <span className="text-xs px-2 py-1 bg-white/10 rounded">
+          Node
+        </span>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      ></motion.div>
-    </section>
+
+      {/* Buttons */}
+      <div className="mt-4 flex gap-3">
+        <a className="text-sm text-blue-400 hover:underline">Live</a>
+        <a className="text-sm text-gray-400 hover:underline">GitHub</a>
+      </div>
+    </div>
+  ))}
+</div>
+    </motion.section>
   );
 }

@@ -14,7 +14,13 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-6 max-w-5xl mx-auto">
+    <motion.section
+  id="skills"
+  className="py-20 px-6 max-w-5xl mx-auto"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text">Skills</h2>
 
       <div className="flex flex-wrap justify-center gap-4">
@@ -27,11 +33,6 @@ export default function Skills() {
           </span>
         ))}
       </div>
-      {/* <motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-></motion.div> */}
-    </section>
+    </motion.section>
   );
 }

@@ -123,9 +123,21 @@
   }
   body {
     @apply bg-background text-foreground;
+    cursor: none;
   }
+
   html {
     @apply font-sans;
     scroll-behavior: smooth;
   }
+}
+
+  .cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
 }

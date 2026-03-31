@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [dark, setDark] = useState(true);
 
   const navLinks = [
     { name: "Home", href: "#" },
@@ -18,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        
+
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-white">
           mosiur.dev
@@ -30,13 +31,26 @@ export default function Navbar() {
             <li key={link.name}>
               <a
                 href={link.href}
-                className="hover:text-white transition"
+                className="relative group"
               >
-                {link.name}
+                {/* {link.name} */}
+                <span className="group-hover:text-white transition">
+                  {link.name}
+                </span>
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-pink-500 transition-all group-hover:w-full"></span>
               </a>
             </li>
           ))}
         </ul>
+        <button
+          onClick={() => {
+            document.documentElement.classList.toggle("dark");
+            setDark(!dark);
+          }}
+          className="ml-4 text-sm"
+        >
+          {dark ? "Light" : "Dark"}
+        </button>
 
         {/* Mobile Menu Button */}
         <button
@@ -59,6 +73,7 @@ export default function Navbar() {
                   className="block hover:text-white transition"
                 >
                   {link.name}
+
                 </a>
               </li>
             ))}

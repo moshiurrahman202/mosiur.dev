@@ -3,7 +3,12 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-6 max-w-5xl mx-auto">
+    <motion.section
+  id="about"
+  className="py-20 px-6 max-w-5xl mx-auto"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -27,6 +32,6 @@ export default function About() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
 ></motion.div>
-    </section>
+    </motion.section>
   );
 }
