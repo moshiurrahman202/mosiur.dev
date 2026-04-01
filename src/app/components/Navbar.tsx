@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(true);
 
   const navLinks = [
     { name: "Home", href: "#" },
@@ -17,16 +17,16 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg border-b border-white/10">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-background/70 backdrop-blur-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-white">
+        <Link href="/" className="text-xl font-bold text-foreground">
           mosiur.dev
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-gray-300">
+        <ul className="hidden md:flex gap-8 text-muted-foreground">
           {navLinks.map((link) => (
             <li key={link.name}>
               <a
@@ -43,20 +43,12 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <button
-          onClick={() => {
-            document.documentElement.classList.toggle("dark");
-            setDark(!dark);
-          }}
-          className="ml-4 px-3 py-1 border border-white/20 rounded hover:bg-white/10 transition"
-        >
-          {dark ? "🌙 Dark" : "☀️ Light"}
-        </button>
+        <ThemeToggle />
         
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-foreground"
           onClick={() => setOpen(!open)}
         >
           {open ? <X /> : <Menu />}
@@ -66,8 +58,8 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {open && (
-        <div className="md:hidden bg-black/90 backdrop-blur-lg px-6 pb-4">
-          <ul className="flex flex-col gap-4 text-gray-300">
+        <div className="md:hidden bg-background/90 backdrop-blur-lg px-6 pb-4">
+          <ul className="flex flex-col gap-4 text-muted-foreground">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a

@@ -28,7 +28,7 @@ export default function Projects() {
   {projects.map((project) => (
     <div
       key={project.title}
-      className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition transform hover:-translate-y-2 hover:shadow-xl"
+      className="p-6 rounded-2xl border bg-card border-border hover:bg-white/10 transition transform hover:-translate-y-2 hover:shadow-xl"
     >
       <h3 className="text-xl font-semibold">{project.title}</h3>
       <p className="text-gray-400 mt-2">{project.desc}</p>
@@ -46,7 +46,7 @@ export default function Projects() {
       {/* Buttons */}
       <div className="mt-4 flex gap-3">
         <a className="text-sm text-blue-400 hover:underline">Live</a>
-        <a className="text-sm text-gray-400 hover:underline">GitHub</a>
+        <a className="text-sm text-muted-foreground hover:underline">GitHub</a>
       </div>
     </div>
   ))}

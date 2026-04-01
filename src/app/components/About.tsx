@@ -20,7 +20,7 @@ export default function About() {
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="text-gray-400 text-lg text-center leading-relaxed"
+        className="text-muted-foreground text-lg text-center leading-relaxed"
       >
         I’m a MERN Stack Developer with experience building modern web
         applications using React, Next.js, Node.js, and MongoDB. I love solving

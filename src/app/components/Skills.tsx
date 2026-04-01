@@ -27,7 +27,7 @@ export default function Skills() {
         {skills.map((skill) => (
           <span
             key={skill}
-            className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition transform hover:-translate-y-2 hover:shadow-xl"
+            className="p-6 rounded-2xl border bg-card border-border hover:bg-white/10 transition transform hover:-translate-y-2 hover:shadow-xl"
           >
             {skill}
           </span>

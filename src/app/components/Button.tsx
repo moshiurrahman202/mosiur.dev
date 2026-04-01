@@ -1,4 +1,3 @@
-// src/app/components/Button.tsx
 "use client";
 
 import React from "react";
@@ -6,13 +5,53 @@ import React from "react";
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
+  href?: string;
+  target?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+  href,
+  target,
+}) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    e.currentTarget.style.transform = `translate(${x * 0.2}px, ${
+      y * 0.2
+    }px)`;
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.transform = "translate(0,0)";
+  };
+
+const baseStyle =
+  "px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium transition hover:scale-105";
+
+  if (href) {
+    return (
+      <a href={href} target={target}>
+        <button
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={baseStyle}
+        >
+          {children}
+        </button>
+      </a>
+    );
+  }
+
   return (
     <button
       onClick={onClick}
-      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={baseStyle}
     >
       {children}
     </button>

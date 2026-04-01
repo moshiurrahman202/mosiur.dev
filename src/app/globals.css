@@ -131,13 +131,10 @@
     scroll-behavior: smooth;
   }
 }
+.cursor-glow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
 
-  .cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid white;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 999;
+.dark .cursor-glow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
