@@ -45,8 +45,8 @@ export default function Projects() {
 
       {/* Buttons */}
       <div className="mt-4 flex gap-3">
-        <a className="text-sm text-blue-400 hover:underline">Live</a>
-        <a className="text-sm text-muted-foreground hover:underline">GitHub</a>
+        <a className="text-sm text-blue-400 hover:underline hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:rounded-2xl cursor-pointer">Live</a>
+        <a className="text-sm text-muted-foreground hover:underline hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:rounded-2xl cursor-pointer">GitHub</a>
       </div>
     </div>
   ))}

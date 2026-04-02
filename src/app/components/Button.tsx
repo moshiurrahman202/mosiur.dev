@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
 const baseStyle =
-  "px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium transition hover:scale-105";
+  "px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] active:scale-95";
 
   if (href) {
     return (

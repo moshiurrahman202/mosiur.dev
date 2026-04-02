@@ -1,3 +1,4 @@
+import Button from "./Button";
 export default function Contact() {
   return (
     <section id="contact" className="py-20 px-6 text-center">
@@ -9,9 +10,8 @@ export default function Contact() {
 
       <a
         href="mailto:your@email.com"
-        className="px-6 py-3 bg-white text-black rounded-full font-medium"
       >
-        Send Email
+        <Button>Send Email</Button>
       </a>
     </section>
   );
