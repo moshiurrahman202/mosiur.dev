@@ -16,7 +16,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+        className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500 "
       >
         Mosiur Rahman
       </motion.h1>
@@ -49,6 +49,7 @@ export default function Hero() {
       <p className="mt-2 text-green-500 text-sm">
         ● Available for opportunities
       </p>
+      
     </section>
   );
 }

@@ -20,9 +20,7 @@ const Button: React.FC<ButtonProps> = ({
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
 
-    e.currentTarget.style.transform = `translate(${x * 0.2}px, ${
-      y * 0.2
-    }px)`;
+   e.currentTarget.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
