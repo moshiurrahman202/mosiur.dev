@@ -18,7 +18,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500 "
       >
-        Mosiur Rahman
+        Moshiur Rahman
       </motion.h1>
 
       {/* Tagline */}
