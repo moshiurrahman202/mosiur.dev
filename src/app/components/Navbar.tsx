@@ -22,7 +22,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-foreground">
-          mosiur.dev
+          moshiur.dev
         </Link>
 
         {/* Desktop Menu */}
@@ -65,7 +65,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block hover:text-white transition"
+                  className="block hover:text-foreground transition"
                 >
                   {link.name}
 
