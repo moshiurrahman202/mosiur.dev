@@ -5,6 +5,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Github from "./components/Github";
+import Footer from "./components/Footer";
 // import Navbar from "./components/Navbar";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Projects />
       <Github /> 
       <Contact />
+      <Footer />
     </main>
   );
 }

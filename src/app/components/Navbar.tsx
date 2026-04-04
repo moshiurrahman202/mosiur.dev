@@ -1,20 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("home");
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#home", id: "home" },
+    { name: "About", href: "#about", id: "about" },
+    { name: "Skills", href: "#skills", id: "skills" },
+    { name: "Projects", href: "#projects", id: "projects" },
+    { name: "Contact", href: "#contact", id: "contact" },
+
   ];
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "skills", "projects", "contact"];
+
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) {
+          const top = section.offsetTop - 100;
+          const height = section.offsetHeight;
+          if (window.scrollY >= top && window.scrollY < top + height) {
+            setActive(id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-background/70 backdrop-blur-lg border-b border-white/10">
@@ -29,22 +50,28 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-8 text-muted-foreground">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a
-                href={link.href}
-                className="relative group"
-              >
-                {/* {link.name} */}
-                <span className="group-hover:text-white transition">
+              <a href={link.href} className="relative group">
+
+                <span
+                  className={`transition ${active === link.id ? "text-primary" : "text-muted-foreground group-hover:text-primary"
+                    }`}
+                >
                   {link.name}
                 </span>
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-pink-500 transition-all group-hover:w-full"></span>
+
+                {/* underline */}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 ${active === link.id ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                ></span>
+
               </a>
             </li>
           ))}
         </ul>
 
         <ThemeToggle />
-        
+
 
         {/* Mobile Menu Button */}
         <button
@@ -54,7 +81,7 @@ export default function Navbar() {
           {open ? <X /> : <Menu />}
         </button>
       </div>
-      
+
 
       {/* Mobile Dropdown */}
       {open && (
@@ -75,9 +102,9 @@ export default function Navbar() {
           </ul>
 
         </div>
-        
+
       )}
-      
+
     </nav>
   );
 }

@@ -5,7 +5,7 @@ import Button from "./Button";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-background relative overflow-hidden">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-background relative overflow-hidden">
       
       {/* Glow Effects */}
       <div className="absolute w-[500px] h-[500px] bg-pink-500/10 dark:bg-pink-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
@@ -16,7 +16,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500 "
+        className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
       >
         Moshiur Rahman
       </motion.h1>
