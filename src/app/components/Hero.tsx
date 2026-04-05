@@ -6,7 +6,7 @@ import Button from "./Button";
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-background relative overflow-hidden">
-      
+
       {/* Glow Effects */}
       <div className="absolute w-[500px] h-[500px] bg-pink-500/10 dark:bg-pink-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
       <div className="absolute w-[500px] h-[500px] bg-blue-500/10 dark:bg-blue-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
@@ -39,6 +39,9 @@ export default function Hero() {
         className="mt-8 flex gap-4 flex-wrap justify-center"
       >
         <Button href="#projects">View Projects</Button>
+        <Button href="/resume.pdf" target="_blank">
+          View Resume
+        </Button>
 
         <a href="/resume.pdf" download>
           <Button>Download Resume</Button>
@@ -49,7 +52,7 @@ export default function Hero() {
       <p className="mt-2 text-green-500 text-sm">
         ● Available for opportunities
       </p>
-      
+
     </section>
   );
 }
