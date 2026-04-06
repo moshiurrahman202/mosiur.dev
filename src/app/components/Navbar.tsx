@@ -15,7 +15,6 @@ export default function Navbar() {
     { name: "Skills", href: "/#skills", id: "skills" },
     { name: "Projects", href: "/#projects", id: "projects" },
     { name: "Contact", href: "/#contact", id: "contact" },
-    { name: "Resume", href: "/resume" }
 
   ];
   useEffect(() => {
@@ -51,22 +50,19 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-8 text-muted-foreground">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="relative group">
-
+              {/* Use Link instead of <a> */}
+              <Link href={link.href} className="relative group">
                 <span
-                  className={`transition ${active === link.id ? "text-primary" : "text-muted-foreground group-hover:text-primary"
-                    }`}
+                  className={`transition ${active === link.id ? "text-primary" : "text-muted-foreground group-hover:text-primary"}`}
                 >
                   {link.name}
                 </span>
 
                 {/* underline */}
                 <span
-                  className={`absolute left-0 -bottom-1 h-[2px] bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 ${active === link.id ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-gradient-to-r from-pink-500 to-blue-500 transition-all duration-300 ${active === link.id ? "w-full" : "w-0 group-hover:w-full"}`}
                 ></span>
-
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -90,20 +86,17 @@ export default function Navbar() {
           <ul className="flex flex-col gap-4 text-muted-foreground">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="block hover:text-foreground transition"
                 >
                   {link.name}
-
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-
         </div>
-
       )}
 
     </nav>

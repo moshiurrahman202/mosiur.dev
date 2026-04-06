@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Button from "./Button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -39,13 +40,13 @@ export default function Hero() {
         className="mt-8 flex gap-4 flex-wrap justify-center"
       >
         <Button href="#projects">View Projects</Button>
-        <Button href="/resume.pdf" target="_blank">
-          View Resume
-        </Button>
+        <Link href="/resume">
+          <Button>View Resume</Button>
+        </Link>
 
-        <a href="/resume.pdf" download>
+        {/* <Link href="/resume.pdf" download>
           <Button>Download Resume</Button>
-        </a>
+        </Link> */}
       </motion.div>
 
       {/* Status */}
