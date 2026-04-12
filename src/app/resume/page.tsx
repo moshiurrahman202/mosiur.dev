@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, Mail, MapPin, ExternalLink, GiftIcon, Download } from "lucide-react";
+import { ArrowLeft, Mail, MapPin, ExternalLink, Globe, Download } from "lucide-react";
 
 export default function ResumePage() {
   const techStack = [
@@ -87,7 +87,7 @@ export default function ResumePage() {
             <div className="flex justify-between items-start mb-2">
               <h3 className="text-xl font-bold">Smart Recipe Finder</h3>
               <div className="flex gap-3">
-                <a href="#" className="text-muted-foreground hover:text-primary"><GiftIcon size={20} /></a>
+                <a href="#" className="text-muted-foreground hover:text-primary"><Globe size={20} /></a>
                 <a href="#" className="text-muted-foreground hover:text-primary"><ExternalLink size={20} /></a>
               </div>
             </div>
