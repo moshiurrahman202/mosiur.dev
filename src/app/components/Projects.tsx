@@ -71,7 +71,7 @@ export default function Projects() {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2 bg-white text-black font-medium rounded-full text-sm hover:bg-pink-400 hover:text-white transition-colors"
+                  className="px-6 py-2 bg-white text-black font-medium rounded-full text-sm hover:bg-pink-500 hover:text-white transition-colors"
                 >
                   Live Demo
                 </a>

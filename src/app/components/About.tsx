@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <motion.section
-  id="about"
-  className="py-20 px-6 max-w-5xl mx-auto"
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}>
+      id="about"
+      className="py-20 px-6 max-w-5xl mx-auto"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,10 +28,10 @@ export default function About() {
         interfaces.
       </motion.p>
       <motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-></motion.div>
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      ></motion.div>
     </motion.section>
   );
 }
