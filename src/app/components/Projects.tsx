@@ -3,32 +3,31 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// ১. টাইপ ডিফাইন করা (TypeScript এর জন্য ভালো)
 interface Project {
   title: string;
   desc: string;
   image: string;
   live: string;
   github: string;
-  tags?: string[]; // আপনি চাইলে টেক স্ট্যাকও দেখাতে পারেন
+  tags?: string[];
 }
 
 const projects: Project[] = [
   {
     title: "Recipe Finder",
-    desc: "Search meals and save favorites with real-time API integration.",
+    desc: "Built a responsive recipe discovery app using React and TheMealDB API, enabling users to search meals in real-time and save favorites with persistent local storage. Focused on clean UI, fast performance, and smooth user experience.",
     image: "/project2.png",
     live: "https://smart-recipe-finder.netlify.app/",
     github: "https://github.com/moshiurrahman202",
-    tags: ["React", "API", "Tailwind"]
+    tags: ["JavaScript (ES6)", "REST API,", "CSS","LocalStorage"]
   },
   {
-    title: "Todo App",
-    desc: "Manage daily tasks efficiently with local storage and filter features.",
+    title: "DevHire",
+    desc: "A full-stack job application platform featuring job posting, application tracking, and secure authentication with Firebase, built with modern MERN stack technologies.",
     image: "/project1.png",
-    live: "https://smart-recipe-finder.netlify.app/",
-    github: "https://github.com/moshiurrahman202",
-    tags: ["Next.js", "Framer Motion"]
+    live: "https://devhire-d9081.web.app/",
+    github: "https://github.com/moshiurrahman202/devhire-server",
+    tags: ["React","Tailwind","Node.js", "Express", "MongoDB", "Firebase"]
   },
 ];
 
@@ -71,7 +70,7 @@ export default function Projects() {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2 bg-white text-black font-medium rounded-full text-sm hover:bg-pink-500 hover:text-white transition-colors"
+                  className="px-6 py-2 bg-white text-black font-medium rounded-full text-sm transition-colors"
                 >
                   Live Demo
                 </a>

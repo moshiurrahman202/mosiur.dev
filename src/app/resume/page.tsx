@@ -87,8 +87,8 @@ export default function ResumePage() {
             <div className="flex justify-between items-start mb-2">
               <h3 className="text-xl font-bold">Smart Recipe Finder</h3>
               <div className="flex gap-3">
-                <a href="#" className="text-muted-foreground hover:text-primary"><Globe size={20} /></a>
-                <a href="#" className="text-muted-foreground hover:text-primary"><ExternalLink size={20} /></a>
+                <a href="https://github.com/moshiurrahman202" target="_blank" className="text-muted-foreground hover:text-primary"><Globe size={20} /></a>
+                <a href="/resume.pdf" target="_blank" className="text-muted-foreground hover:text-primary"><ExternalLink size={20} /></a>
               </div>
             </div>
             <p className="text-muted-foreground mb-4">A full-stack application utilizing a Recipe API, featuring real-time search, user favorites, and a responsive UI built with Tailwind CSS.</p>
@@ -108,7 +108,7 @@ export default function ResumePage() {
           <h2 className="text-2xl font-bold mb-4 border-b pb-2">Education</h2>
           <div>
             <h3 className="font-bold">Diploma in Computer Science</h3>
-            <p className="text-muted-foreground">Institue Name / Board Name</p>
+            <p className="text-muted-foreground">South Bengal Institute of Technology , Khulna / Bangladesh Technical Education Board (BTEB)</p>
           </div>
         </section>
         <section>
